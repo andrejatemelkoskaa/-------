@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andreja Temelkoska - CV</title>
+    <style>
+        :root {
+            --color-navy: #1a2e4a;
+            --color-blue-accent: #1e70e0;
+            --color-text-dark: #111111;
+            --color-text-grey: #555555;
+            --color-white: #ffffff;
+            --color-track: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: var(--color-text-dark);
+            background-color: #f4f6f9;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .cv-wrapper {
+            display: flex;
+            width: 100%;
+            max-width: 900px;
+            background-color: var(--color-white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 35%;
+            background-color: var(--color-navy);
+            color: var(--color-white);
+            padding: 40px 25px;
+            flex-shrink: 0;
+        }
+
+        .profile-photo {
+            display: block;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 30px auto;
+            border: 3px solid var(--color-white);
+        }
+
+        .sidebar-heading {
+            font-size: 1.1em;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin: 30px 0 15px 0;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .sidebar address {
+            font-style: normal;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .sidebar address p {
+            margin-bottom: 10px;
+        }
+
+        .sidebar-skills {
+            list-style: none;
+        }
+
+        .sidebar-skills > li {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .sidebar-skills strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #a0b2c6;
+        }
+
+        .language-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 15px;
+            margin-bottom: 4px;
+        }
+
+        .lang-name {
+            font-size: 13px;
+            width: 35%;
+        }
+
+        .bar-track {
+            width: 65%;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background-color: var(--color-blue-accent);
+            border-radius: 5px;
+        }
+
+        .lang-level {
+            font-size: 11px;
+            font-style: italic;
+            color: #cbd5e1;
+            margin-bottom: 12px;
+            text-align: right;
+        }
+
+        .main-content {
+            width: 65%;
+            padding: 40px;
+            background-color: var(--color-white);
+        }
+
+        .main-content h1 {
+            color: var(--color-navy);
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .job-title-sub {
+            font-size: 1.2em;
+            color: var(--color-text-grey);
+            font-style: italic;
+            margin-bottom: 35px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: var(--color-navy);
+            margin: 30px 0 20px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--color-blue-accent);
+            letter-spacing: 0.5px;
+        }
+
+        .section-heading .icon {
+            width: 12px;
+            height: 12px;
+            background-color: var(--color-blue-accent);
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+        .entry-list {
+            list-style: none;
+        }
+
+        .entry-item {
+            margin-bottom: 25px;
+        }
+
+        .entry-item h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--color-text-dark);
+            margin-bottom: 4px;
+        }
+
+        .entry-item .details {
+            font-size: 14px;
+            color: var(--color-text-grey);
+            margin-bottom: 4px;
+        }
+
+        .entry-item .date {
+            font-size: 13px;
+            color: var(--color-blue-accent);
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .entry-item ul {
+            padding-left: 20px;
+            color: var(--color-text-grey);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .entry-item ul li {
+            margin-bottom: 4px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 0;
+            }
+            .cv-wrapper {
+                flex-direction: column;
+            }
+            .sidebar, .main-content {
+                width: 100%;
+            }
+            .sidebar {
+                padding: 30px 20px;
+            }
+            .main-content {
+                padding: 30px 20px;
+            }
+        }
+
+        @media print {
+            body {
+                background: var(--color-white);
+                padding: 0;
+            }
+            .cv-wrapper {
+                box-shadow: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-wrapper">
+        
+        <div class="sidebar">
+            <img class="profile-photo" src="image.jpg" alt="Andreja Temelkoska">
+            
+            <h3 class="sidebar-heading">Contact</h3>
+            <address>
+                <p>Email: andrejatemelkoska123@gmail.com</p>
+                <p>Phone: +389 (0) 75 240 974</p>
+                <p>Address: ul. Boca Ivanoska br.7, 75000 Prilep, North Macedonia</p>
+            </address>
+
+            <h3 class="sidebar-heading">Languages</h3>
+            
+            <div class="language-row">
+                <span class="lang-name">Macedonian</span>
+                <div class="bar-track">
+                    <div class="bar-fill" style="width: 100%;"></div>
+                </div>
+            </div>
+            <p class="lang-level">Native</p>
+
+            <div class="language-row">
+                <span class="lang-name">English</span>
+                <div class="bar-track">
+                    <div class="bar-fill" style="width: 90%;"></div>
+                </div>
+            </div>
+            <p class="lang-level">Excellent</p>
+
+            <div class="language-row">
+                <span class="lang-name">Croatian</span>
+                <div class="bar-track">
+                    <div class="bar-fill" style="width: 90%;"></div>
+                </div>
+            </div>
+            <p class="lang-level">Excellent</p>
+
+            <div class="language-row">
+                <span class="lang-name">German</span>
+                <div class="bar-track">
+                    <div class="bar-fill" style="width: 60%;"></div>
+                </div>
+            </div>
+            <p class="lang-level">Good</p>
+
+            <h3 class="sidebar-heading">Skills</h3>
+            <ul class="sidebar-skills">
+                <li>
+                    <strong>Technical Tools</strong>
+                    Microsoft Word, Excel, PowerPoint, Internet Research
+                </li>
+                <li>
+                    <strong>Interpersonal</strong>
+                    Professional Communication, Teamwork, Flexible, Hardworking
+                </li>
+                <li>
+                    <strong>Other</strong>
+                    Driver's License (B-category)
+                </li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <h1>Andreja Temelkoska</h1>
+            <p class="job-title-sub">E-business Student & Hospitality Specialist</p>
+
+            <div class="section-heading">
+                <span class="icon"></span> Work Experience
+            </div>
+            <ul class="entry-list">
+                <li class="entry-item">
+                    <h3>Hospitality Associate</h3>
+                    <p class="details">Private Hotel & Hostel, Krusevo</p>
+                    <p class="date">2024 – 2025</p>
+                    <ul>
+                        <li>Managed hotel and hostel operations.</li>
+                        <li>Coordinated guest check-ins and room assignments.</li>
+                        <li>Managed reservation systems and room scheduling.</li>
+                        <li>Responded to guest inquiries professionally.</li>
+                        <li>Handled communication via telephone and email.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="section-heading">
+                <span class="icon"></span> Education
+            </div>
+            <ul class="entry-list">
+                <li class="entry-item">
+                    <h3>Student of E-business</h3>
+                    <p class="details">University Ss. Cyril and Methodius, Skopje</p>
+                    <p class="date">2023 – Present</p>
+                    <ul>
+                        <li>Currently in third year at the Faculty of Economics.</li>
+                    </ul>
+                </li>
+                <li class="entry-item">
+                    <h3>High School Diploma</h3>
+                    <p class="details">SOU Gimnazija Mirce Acev, Prilep</p>
+                    <p class="date">2019 – 2023</p>
+                    <ul>
+                        <li>Field of study: Social sciences and humanities.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>
